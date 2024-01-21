@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bytez-server-deployment
+  labels:
+    name:  bytez-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bytez-server
+  template:
+    metadata:
+      labels:
+        app: bytez-server
+    spec:
+      containers:
+      - image: nabeelncz/bytez-server:0.0.2
+        name: bytez-server

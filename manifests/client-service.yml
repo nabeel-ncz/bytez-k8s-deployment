@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name:  bytez-client-service
+spec:
+  selector:
+    app: bytez-client
+  ports:
+  - name:  bytez-client
+    protocol: TCP
+    port:  5173
+    targetPort: 5173

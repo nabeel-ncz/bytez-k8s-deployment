@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bytez-mongodb-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bytez-mongodb
+  template:
+    metadata:
+      labels:
+        app: bytez-mongodb
+    spec:
+      containers:
+      - name:  bytez-mongodb
+        image: mongo:latest
